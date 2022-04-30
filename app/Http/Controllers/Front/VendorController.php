@@ -9,6 +9,7 @@ use App\Mail\refuseProduct;
 use App\Models\Category;
 use App\Models\PendingProduct;
 use App\Models\Product;
+use App\Models\Prop;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -32,7 +33,6 @@ class VendorController extends Controller
 
     public function store(Request $request)
     {
-        return $request->keys;
         $validator = Validator::make($request->all(), [
             'product_title' => 'required|max:255',
             'sub_category' => 'required|max:255',
@@ -42,7 +42,10 @@ class VendorController extends Controller
             return redirect()->back()
                 ->withErrors($validator)
                 ->withInput();
-        }
+            }
+            if (!$request->hasFile('image1') && !$request->hasFile('image2') && !$request->hasFile('image3') &&  !$request->hasFile('image4')) {
+               return redirect()->back()->with('fail', '! المنتج ليس لديه صور ');
+            }
 
         $data = new PendingProduct();
         $data->vendor_id = auth('vendors')->id();
@@ -54,6 +57,10 @@ class VendorController extends Controller
         $data->info = $request->get('info');
         $data->material = $request->get('material');
         $data->weight = $request->get('weight');
+        if ($request->has('prop')) {
+            $data->prop =  $request->input('prop') ;
+            $data->value = explode(",",$request->value[0]) ;
+        }
         $data->widthHeight = $request->get('widthHeight');
         $data->save();
 
@@ -64,9 +71,6 @@ class VendorController extends Controller
                     ->toMediaCollection();
             }
             $i++;
-        }
-        if (!$request->hasFile('image1') && !$request->hasFile('image2') && !$request->hasFile('image3') &&  !$request->hasFile('image4')) {
-            redirect()->back()->with('fail', '! المنتج ليس لديه صور ');
         }
 
         if ($data) {
@@ -90,7 +94,7 @@ class VendorController extends Controller
         $data->vendor_id  = $pendingProduct->vendor_id;
         $data->slug  = $pendingProduct->slug;
         $data->description  = $pendingProduct->description;
-        $data->active  = $pendingProduct->active;
+        $data->active  = 1;
         $data->price  = $pendingProduct->price;
         $data->info  = $pendingProduct->info;
         $data->material  = $pendingProduct->material;
@@ -107,7 +111,13 @@ class VendorController extends Controller
         if ($pendingProduct->sub_category) {
             $data->subcategories()->attach($pendingProduct->sub_category);
         }
-
+        if (!$pendingProduct->prop == null) {
+            $prop =  new Prop();
+            $prop->product_id = $data->id;
+            $prop->key = $pendingProduct->prop;
+            $prop->value = $pendingProduct->value;
+            $prop->save();
+        }
         $vendor = Vendor::find($pendingProduct->vendor_id);
         Mail::to($vendor->email)
 
@@ -116,7 +126,6 @@ class VendorController extends Controller
 
 
 
-        $pendingProduct->active = 1;
         $pendingProduct->delete();
         return redirect('admin/pending-products');
     }

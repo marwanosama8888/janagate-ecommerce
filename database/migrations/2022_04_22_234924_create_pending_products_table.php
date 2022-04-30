@@ -31,6 +31,8 @@ class CreatePendingProductsTable extends Migration
             $table->boolean('active')->default(0);
 			$table->integer('price');
 
+            $table->string('prop')->nullable();
+            $table->json('value')->nullable();
 
             $table->longText('info')->nullable();
             $table->string('material')->default('cotton');

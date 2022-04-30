@@ -4,11 +4,14 @@
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
+        </x-slot>
+
+        <center>
             <p>
                 Vendors Login
             </p>
-        </x-slot>
 
+        </center>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -45,7 +48,7 @@
 
             <div class="flex items-center justify-end mt-4">
 
-                <a href="{{url('vendor/register')}}">Don't Have a vendor account?</a>
+                <a href="{{url('vendor/register')}}">ليس لديك حساب تاجر؟</a>
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>

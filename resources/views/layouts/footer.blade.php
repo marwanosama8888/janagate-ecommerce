@@ -9,7 +9,7 @@
               <a href="mailto:inf@janagate.com.com">
                 inf@janagate.com <i class="fa-regular fa-envelope"></i>
               </a>
-              <a href="http://www.janagate.com">
+              <a href="{{ url('/') }}">
                 www.janagate.com <i class="fa-solid fa-globe a-three"></i>
               </a>
             </div>
@@ -41,7 +41,7 @@
                 <a href="#">{{ trans('footer.policy') }}</a>
                 <a href="#">{{ trans('footer.privacy') }}</a>
                 <a href="#">{{ trans('footer.usage-policy') }}</a>
-                <a href="contactus.html">{{ trans('footer.contact-us') }}</a>
+                <a href="{{  route('landing.page') }}">{{ trans('footer.contact-us') }}</a>
               </div>
               <div class="logo-foot">
                 <a href="http://www.facebook.com"

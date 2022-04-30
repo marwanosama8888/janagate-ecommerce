@@ -29,11 +29,14 @@ class PendingProduct extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $table = 'pending_products';
+    protected $casts = [
+        'value' => 'array'
+     ];
 
     protected $keyType = 'integer';
 
     /**
      * @var array
      */
-    protected $fillable = ['vendor_id', 'product_title', 'slug', 'category', 'sub_category', 'description', 'active', 'price', 'info', 'material', 'weight', 'widthHeight', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = ['vendor_id', 'product_title', 'slug', 'category', 'sub_category', 'description', 'active', 'price',  'prop', 'value', 'info', 'material', 'weight', 'widthHeight', 'created_at', 'updated_at','deleted_at'];
 }

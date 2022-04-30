@@ -21,7 +21,6 @@ class AuthenticatedSessionController extends Controller
         {
             session(['link' => url()->previous()]);
         }
-        session(['link' => url()->previous()]);
 
         return view('auth.login');
     }

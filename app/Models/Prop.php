@@ -9,10 +9,10 @@ class Prop extends Model
 {
     use HasFactory;
     protected $table = 'product_props';
-    protected $fillable = ['product_id', 'key', 'value'];
     protected $casts = [
         'value' => 'array',
     ];
+    protected $fillable = ['product_id', 'key', 'value'];
 
     /**
      * Get the products that owns the ProductProp

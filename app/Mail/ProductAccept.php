@@ -30,6 +30,9 @@ class ProductAccept extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.productAccept');
+        return $this->view('mail.productAccept')->with([
+            'product_title' => $this->product_title,
+            'vendor_name' => $this->vendor_name,
+        ]);
     }
 }
