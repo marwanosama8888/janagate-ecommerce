@@ -47,26 +47,32 @@
             <div class="box-box-all">
                 <div class="box-box">
                     <a href="{{ url('category/electronics') }}">
-                        <img src="{{ asset('assets/images/box-box-8.png') }}" alt="" />
-                        <p>{{ trans('home.home') }}</p>
+                        <img src="{{ asset('assets/images/box-box-5.png') }}" alt="" />
+                        <p>{{ trans('home.tech') }}</p>
                     </a>
                 </div>
                 <div class="box-box">
                     <a href="{{ url('category/fashion') }}">
+                        <img src="{{ asset('assets/images/box-box-1.png') }}" alt="" />
+                        <p>{{ trans('home.fashion') }}</p>
+                    </a>
+                </div>
+                <div class="box-box">
+                    <a href="{{ url('category/sports') }}">
                         <img src="{{ asset('assets/images/box-box-2.png') }}" alt="" />
                         <p>{{ trans('home.sports') }}</p>
                     </a>
                 </div>
                 <div class="box-box">
-                    <a href="{{ url('category/sports') }}">
+                    <a href="{{ url('category/healthy') }}">
                         <img src="{{ asset('assets/images/box-box-3.png') }}" alt="" />
                         <p>{{ trans('home.healthy') }}</p>
                     </a>
                 </div>
                 <div class="box-box">
-                    <a href="{{ url('category/electronics') }}">
-                        <img src="{{ asset('assets/images/box-box-5.png') }}" alt="" />
-                        <p>{{ trans('home.tech') }}</p>
+                    <a href="{{ url('category/home') }}">
+                        <img src="{{ asset('assets/images/box-box-4.png') }}" alt="" />
+                        <p>{{ trans('home.home') }}</p>
                     </a>
                 </div>
             </div>
@@ -77,21 +83,21 @@
                         <p>{{ trans('home.art') }}</p>
                     </a>
                 </div>
-                {{-- <div class="box-box">
-            <a href="./products.html">
+                <div class="box-box">
+            <a href="{{ url('category/services') }}">
               <img src="{{asset('assets/images/box-box-7.png')}}" alt="" />
-              <p>الخدمات</p>
+              <p>{{ trans('home.ser') }}</p>
             </a>
           </div>
           <div class="box-box box-arow">
-            <a href="./products.html">
+            <a href="{{ url('category/more') }}">
               <img src="{{asset('assets/images/box-box-8.png')}}" alt="" />
-              <p>المزيد</p>
+              <p>{{ trans('home.more') }}</p>
             </a>
             <a class="arow-imag" href="./products.html">
               <img src="{{asset('assets/images/arow-left-mazeed.png')}}" alt="" />
             </a>
-          </div> --}}
+          </div>
             </div>
         </div>
     </section>

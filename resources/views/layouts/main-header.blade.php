@@ -33,15 +33,7 @@
                         <img src="{{ asset('assets/images/logo-jana-nav.png') }}" alt="" />
                     </a>
                 </div>
-                <ul>
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <li>
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                {{ $properties['native'] }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+
                 <div class="lang-sign-efta7mzad-input">
                     <div class="lang-sign-efta7mzad">
                         <div class="sign-mzadak">
@@ -74,7 +66,7 @@
 
                             </form>
                         @else
-                            <span>|</span>
+                        <span>|</span>
                             <div class="lang">
                                 <a href="{{ route('register') }}">{{ trans('nav.register') }}</a>
 
@@ -94,6 +86,15 @@
                         <a href="{{ url('vendor/') }}">{{ trans('nav.vendor') }}</a>
                         <span>|</span>
                         <a href="{{route('landing.page')}}">{{ trans('nav.contact-us') }}</a>
+                        <ul class="lang-nav">
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <li>
+                                    <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                        {{ $properties['native'] }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>

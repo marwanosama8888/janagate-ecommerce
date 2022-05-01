@@ -1,5 +1,5 @@
 
-@extends('layouts.master')
+@extends('layouts.header')
 @section('links')
 <style>
     /* start small card */
@@ -36,38 +36,22 @@
 /* end small card */
 </style>
 @endsection
-@section('content')
 <div class="container small-card">
-    <div class="card text-center div-small-card">
-      <div class="card-header">
-          <h4>Success</h4>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Hello my Dear <span>{{ucfirst($username)}}</span></h5>
-        <p class="card-text">
-          Your product send to admins and i will be on website soon
-        </p>
-        <a href="#" class="btn-small-card">Go home</a>
-      </div>
-      <div class="card-footer text-muted">
-          <a href="https://www.tiktok.com/@janagate?is_from_webapp=1&sender_device=pc">janagate.Tiktok</a>
-      </div>
-    </div>
+
     <!-- ^^^^^^^^^^^^^^^^^^^^^^ -->
     <div class="card text-center div-small-card">
       <div class="card-header">
           <h4>faild</h4>
       </div>
       <div class="card-body">
-        <h5 class="card-title">Hello my Dear <span>ahmed</span></h5>
+        <h5 class="card-title">Hello my Dear <span>{{ucfirst($username)}}</span></h5>
         <p class="card-text">
             Unfortunately, Your Product {{$productName}} has been refused .
             You welcom any time to ask for the reason        </p>
-        <a href="#" class="btn-small-card">Go home</a>
+        <a href="#" class="btn-small-card">Janagate</a>
       </div>
       <div class="card-footer text-muted">
           <a href="https://www.tiktok.com/@janagate?is_from_webapp=1&sender_device=pc">janagate.Tiktok</a>
       </div>
     </div>
   </div>
-@endsection

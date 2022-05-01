@@ -30,4 +30,10 @@
 @yield('links')
 
 <!-- my css file -->
+@if ( LaravelLocalization::getCurrentLocale() == 'en' )
+<link rel="stylesheet" href="{{asset('assets/css/mainen.css')}}" />
+
+@else
 <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+
+@endif

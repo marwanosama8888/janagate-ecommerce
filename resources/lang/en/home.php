@@ -15,8 +15,12 @@ return [
 
     'home' => 'Home And Furniture',
     'sports' => 'Sports And Beauty',
+    'fashion' => 'Fashion and Beauty',
     'healthy' => 'Healthy And Food',
     'tech' => 'Electronics',
     'art' => 'Art',
+    'more' => 'More',
+    'ser' => 'Services',
+
     'best' => 'Best Selling',
 ];

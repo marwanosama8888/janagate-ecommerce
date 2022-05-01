@@ -17,10 +17,13 @@ class Products extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 20;) {
+
+        for ($i = 0; $i < 10;) {
+            $faker = Faker::create();
+            $name = 'TShirt '.  $faker->firstName();
             $data = Product::create([
                 'vendor_id' => 1,
-                'name' => 'New Product',
+                'name' => $name,
                 'description' => 'Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.',
                 'active' => 1,
                 'price' => 100,
@@ -28,12 +31,11 @@ class Products extends Seeder
                 'material' => 'material',
                 'weight' => 100,
                 'widthHeight' => 100,
-                'slug' => Str::slug('New Product'),
+                'slug' => Str::slug( $name ),
 
             ]);
-            $faker = Faker::create();
 
-            $imageUrl = $faker->imageUrl(640, 480, null, false);
+            $imageUrl =  url('https://5.imimg.com/data5/BG/UM/MY-23375112/61-500x500.jpg');
             $data->addMediaFromUrl($imageUrl)->toMediaCollection();
             $pivot = SCategory::find(1);
             $data->subcategories()->save($pivot);

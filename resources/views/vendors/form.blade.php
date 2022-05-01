@@ -19,8 +19,6 @@
     <!-- end new links for ajax  -->
 @endsection
 @section('content')
-<script>document.getElementsByClassName('bootstrap-tagsinput')[0].style.visibility='hidden';
-</script>
     <section class="sec-page">
         <div class="container">
             <div class="page-all">
@@ -886,7 +884,7 @@
      }
    }
  </script>
-       <script>
+       {{-- <script>
         $('input').tagsinput({
           typeahead: {
             source: function(query) {
@@ -894,5 +892,5 @@
             }
           }
         });
-        </script>
+        </script> --}}
 @endsection
