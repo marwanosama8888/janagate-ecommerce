@@ -2660,7 +2660,10 @@
   .small-img-detail img {
     max-width: 100px;
   }
-
+  .remove-btn{
+    border: none;
+    background: transparent;
+}
   .text-details {
     display: flex;
     justify-content: space-between;
@@ -2837,7 +2840,9 @@
     background-color: #ebbb2c;
     color: white !important;
   }
-
+  .btn-cont-form{
+    color: #000;
+}
   .left-side-check {
     width: 350px;
   }
