@@ -472,12 +472,15 @@
     margin-bottom: 1.5px;
   }
 
-  .contact a i {
+  /* .contact a i {
     color: white;
     background-color: #ebbb2c;
     padding: 10px;
     border: none;
-  }
+  } */
+  .contact a .whats {
+    margin-left: 5px;
+}
 
   .contact {
     display: flex;
@@ -1869,6 +1872,7 @@
     background-color: #ebbb2c;
     padding: 10px;
     border: none;
+    width: 40px;
   }
 
   .contact {

@@ -18,6 +18,10 @@
                 <a href="#">
                   <i class="fa-solid fa-phone a-one"></i> 0580125943, 0581805441
                 </a>
+
+                <a href="https://wa.me/message/BOPJKXJDEZTTK1">
+                    <i class="whats fa-brands fa-whatsapp"></i>WhatsApp
+                </a>
                 <a href="#">
                   <i class="fa-regular fa-envelope"></i> inf@janagate.com
                 </a>

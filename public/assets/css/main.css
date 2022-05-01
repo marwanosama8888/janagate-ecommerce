@@ -43,7 +43,7 @@ body {
 
 .lang-sign-efta7mzad-input {
     /* background-color: rgb(255, 149, 149); */
-    width: 465px;
+    width: 500px;
     /* margin: auto; */
 }
 
@@ -466,11 +466,14 @@ body {
     margin-bottom: 1.5px;
 }
 
-.contact a i {
+/* .contact a i {
     color: white;
     background-color: #ebbb2c;
     padding: 10px;
     border: none;
+} */
+.contact a .whats{
+    margin-left: 5px;
 }
 
 .contact {
@@ -1889,6 +1892,7 @@ body {
     background-color: #ebbb2c;
     padding: 10px;
     border: none;
+    width: 40px;
 }
 
 .contact {

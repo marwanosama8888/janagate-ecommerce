@@ -84,20 +84,20 @@
                     </a>
                 </div>
                 <div class="box-box">
-            <a href="{{ url('category/services') }}">
-              <img src="{{asset('assets/images/box-box-7.png')}}" alt="" />
-              <p>{{ trans('home.ser') }}</p>
-            </a>
-          </div>
-          <div class="box-box box-arow">
-            <a href="{{ url('category/more') }}">
-              <img src="{{asset('assets/images/box-box-8.png')}}" alt="" />
-              <p>{{ trans('home.more') }}</p>
-            </a>
-            <a class="arow-imag" href="./products.html">
-              <img src="{{asset('assets/images/arow-left-mazeed.png')}}" alt="" />
-            </a>
-          </div>
+                    <a href="{{ url('category/services') }}">
+                        <img src="{{ asset('assets/images/box-box-7.png') }}" alt="" />
+                        <p>{{ trans('home.ser') }}</p>
+                    </a>
+                </div>
+                <div class="box-box box-arow">
+                    <a href="{{ url('category/more') }}">
+                        <img src="{{ asset('assets/images/box-box-8.png') }}" alt="" />
+                        <p>{{ trans('home.more') }}</p>
+                    </a>
+                    <a class="arow-imag" href="./products.html">
+                        <img src="{{ asset('assets/images/arow-left-mazeed.png') }}" alt="" />
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -139,7 +139,8 @@
         <div class="container">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    @foreach ($products->latest()->take(15)->get() as $item)
+                    @foreach ($products->latest()->take(15)->get()
+        as $item)
                         <div class="swiper-slide">
                             <a href="{{ url('product/' . $item->slug) }}">
                                 <img src="{{ $item->getMedia() ? $item->getFirstMediaUrl() : asset('assets/images/img-swiber-9.png') }}"
@@ -162,7 +163,8 @@
         <div class="container">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    @foreach ($products->orderBy('price','asc')->take(15)->get() as $item)
+                    @foreach ($products->orderBy('price', 'asc')->take(15)->get()
+        as $item)
                         <div class="swiper-slide">
                             <a href="{{ url('product/' . $item->slug) }}">
                                 <img src="{{ $item->getMedia() ? $item->getFirstMediaUrl() : asset('assets/images/img-swiber-9.png') }}"
@@ -184,5 +186,41 @@
         </div>
     </section>
     <!-- end swiber image -->
+    <div class="icon-whats">
+        <a href="https://www.whatsapp.com/">
+            <i class="fa-brands fa-facebook-messenger"></i> </a>
+    </div>
 
+@endsection
+@section('links')
+    <style>
+        .icon-whats {
+            background-color: #ebbb2c;
+            border-radius: 20px;
+            color: black;
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-whats a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .icon-whats i {
+            font-size: 30px;
+
+        }
+
+        .icon-whats i:hover {
+            color: white;
+        }
+
+    </style>
 @endsection
